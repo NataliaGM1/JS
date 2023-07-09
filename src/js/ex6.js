@@ -1,28 +1,27 @@
-function getElement(){
-    let sectionEx6 = document.getElementById('ex6');
-    return sectionEx6;
-}
+function compareNumbers() {
+    const num1 = parseFloat(document.getElementById('num1Input').value);
+    const num2 = parseFloat(document.getElementById('num2Input').value);
+    const num3 = parseFloat(document.getElementById('num3Input').value);
+  
+  
+    let comparisonResult;
+    if (num1 > num2 && num1 > num3) {
+      comparisonResult = `El número ${num1} es el mayor de los tres.`;
+    } else if (num2 > num1 && num2 > num3) {
+      comparisonResult = `El número ${num2} es el mayor de los tres.`;
+    } else if (num3 > num1 && num3 > num2) {
+      comparisonResult = `El número ${num3} es el mayor de los tres.`;
+    } else {
+      comparisonResult = 'Los tres números son iguales.';
+    }
+    if (Number.isNaN(num1) || Number.isNaN(num2) || Number.isNaN(num3)) {
+        alert('Por favor, introduce números válidos.');
+        return;
+      }
 
-function render(){
-    let section2 = getElement();
-    let numero1 = prompt(`Introduce primer numero: `);
-    let numero2 = prompt(`Introduce segundo numero: `);
-    let numero3 = prompt(`Introduce tercer numero: `);
-    let numeroint1 = parseInt(numero1);
-    let numeroint2 = parseInt(numero2);
-    let numeroint3 = parseInt(numero3);
-    let mayor;
-    if ((numeroint1 > numeroint2) && (numeroint1 > numeroint3)){
-        mayor = numeroint1;
-    }
-    else if((numeroint2 > numeroint1) && (numeroint2 > numeroint3)){
-        mayor = numeroint2;
-    }
-    else{
-        mayor = numeroint3;
-    }
-    let resultado2 = "El mayor es: " + mayor;
-    section2.innerHTML = `<h1>${resultado2}</h1>`;
-}
-
-render();
+  
+    const comparisonElement = document.getElementById('comparisonResult');
+    comparisonElement.textContent = comparisonResult;
+  }
+   
+  
